@@ -1,7 +1,8 @@
 {
   "name": "Demo: Add to Home Screen",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "short_name": "Demo: A2HS",
+  "theme_color": "#50913f",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "./",
   "start_url": "./?as-app=true",
