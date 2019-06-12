@@ -8,11 +8,14 @@
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./service-worker.js').then((registration) => {
-                appLogger.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
-            }, (error) => {
-                appLogger.log(`Service worker registration failed: ${error}`);
-            });
+            navigator.serviceWorker.register('./service-worker.js', {
+                scope: './'
+            })
+                .then((registration) => {
+                    appLogger.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
+                }, (error) => {
+                    appLogger.log(`Service worker registration failed: ${error}`);
+                });
         });
     }
 

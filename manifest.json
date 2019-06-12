@@ -3,7 +3,8 @@
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",
-  "start_url": "/?as-app=true",
+  "scope": "./",
+  "start_url": "./?as-app=true",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
