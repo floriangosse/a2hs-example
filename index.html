@@ -17,10 +17,15 @@
             user the option to add the application to the homescreen.
         </p>
 
-        <button type="button" class="install-button js-install-button" disabled>Install app</button>
-        —
-        <span class="js-install-info-not-ready">The app installation can't be triggered by the app yet.</span>
-        <span class="js-install-info-ready" style="display: none">The app installation can now be triggered.</span>
+        <div class="js-not-installed" style="display: none">
+            <button type="button" class="install-button js-install-button" disabled>Install app</button>
+            —
+            <span class="js-install-info-not-ready">The app installation can't be triggered by the app yet.</span>
+            <span class="js-install-info-ready" style="display: none">The app installation can now be triggered.</span>
+        </div>
+        <div class="js-installed" style="display: none">
+            <p>This application is running as an installed application.</p>
+        </div>
 
         <aside class="tools">
             <h1>Tools</h1>

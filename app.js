@@ -1,10 +1,22 @@
 ((appLogger, globals) => {
 
     const installButton = document.querySelector('.js-install-button');
+    const installedContainer = document.querySelector('.js-installed');
+    const notInstalledContainer = document.querySelector('.js-not-installed');
     const installInfoReadyElement = document.querySelector('.js-install-info-ready');
     const installInfoNotReadyElement = document.querySelector('.js-install-info-not-ready');
 
     let deferredPrompt;
+
+    const isInstalled = (new URLSearchParams(location.search)).get('as-app') === 'true';
+
+    if (isInstalled) {
+        installedContainer.style.removeProperty('display');
+        notInstalledContainer.style.setProperty('display', 'none');
+    } else {
+        notInstalledContainer.style.removeProperty('display');
+        installedContainer.style.setProperty('display', 'none');
+    }
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -45,9 +57,9 @@
         deferredPrompt.userChoice
             .then((choiceResult) => {
                 if (choiceResult.outcome === 'accepted') {
-                    log('User accepted the A2HS prompt');
+                    appLogger.log('User accepted the A2HS prompt');
                 } else {
-                    log('User dismissed the A2HS prompt');
+                    appLogger.log('User dismissed the A2HS prompt');
                 }
 
                 deferredPrompt = null;
