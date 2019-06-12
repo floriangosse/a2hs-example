@@ -1,0 +1,99 @@
+.tools {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    width: 40vw;
+
+    border: 1px solid lightgray;
+
+    font-size: 0.8rem;
+}
+
+.tools > h1,
+.tools > h2 {
+    margin: 0;
+    background: #606060;
+    color: #f6f6f6;
+    font-weight: normal;
+}
+
+.tools > h1 {
+    padding: 0.4em 0.8rem 0.4em;
+
+    font-size: 1.3em;
+}
+
+.tools > h2 {
+    padding: 0.3em 0.8rem 0.3em;
+
+    font-size: 1.2em;
+}
+
+.stats {
+    width: 100%;
+
+    font-size: 0.8rem;
+    border-collapse: collapse;
+}
+
+.stats tr:nth-child(even) {
+    background: #f0f0f0;
+}
+
+.stats th,
+.stats td {
+    width: 50%;
+    padding: 0.3em 0.4rem;
+}
+
+.stats tr > :first-child {
+    padding-left: 0.8rem;
+}
+.stats tr > :last-child {
+    padding-right: 0.8rem;
+}
+
+.stats th {
+    text-align: left;
+    font-weight: normal;
+
+    border-right: 1px solid #e0e0e0;
+}
+
+.log {
+    width: 100%;
+    height: 15em;
+
+    overflow-x: auto;
+    overflow-y: scroll;
+
+    font-family: monospace;
+    color: #000000;
+}
+
+.log-line {
+    display: flex;
+
+    padding: 0.2em 0.8rem;
+
+    line-height: 1.3em;
+}
+
+.log-line:nth-child(even) {
+    background: #f0f0f0;
+}
+
+.log-line-date {
+    flex-shrink: 0;
+    margin-right: 0.5em;
+    color: #888888;
+}
+
+.log-line-date:before {
+    content: '[';
+}
+
+.log-line-date:after {
+    content: ']';
+}

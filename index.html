@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="manifest" href="manifest.json">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Demo: Add to Homescreen</title>
+        <link rel="stylesheet" href="app.css">
+        <link rel="stylesheet" href="tools.css">
+    </head>
+    <body>
+        <h1>Demo: Add to Homescreen</h1>
+
+        <p>
+            This demo shows how the "Add to Homescreen" feature works. It will show a custom interface which gives the
+            user the option to add the application to the homescreen.
+        </p>
+
+        <button type="button" class="install-button js-install-button" disabled>Install app</button>
+        —
+        <span class="js-install-info-not-ready">The app installation can't be triggered by the app yet.</span>
+        <span class="js-install-info-ready" style="display: none">The app installation can now be triggered.</span>
+
+        <aside class="tools">
+            <h1>Tools</h1>
+
+            <table class="stats">
+                <tr>
+                    <th scope="col">Display mode: standalone</th>
+                    <td class="js-display-mode-standalone">-</td>
+                </tr><tr>
+                    <th scope="col">Running as app</th>
+                    <td class="js-running-as-app">-</td>
+                </tr>
+            </table>
+
+            <h2>Log</h2>
+
+            <div class="log js-log">
+            </div>
+        </aside>
+
+        <script src="tools.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
