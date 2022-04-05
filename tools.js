@@ -16,6 +16,7 @@
         return params.get('as-app') === 'true';
     }
 
+    const toolsElement = document.querySelector('.js-tools');
     const logElement = document.querySelector('.js-log');
 
     function log(message) {
@@ -39,6 +40,32 @@
 
         logElement.scrollTop = logElement.scrollHeight - logElement.clientHeight;
     }
+
+    let pointerCount = 0;
+    let lastPointerUp = null;
+
+    document.addEventListener('pointerup', (event) => {
+        const now = performance.now();
+
+        if (lastPointerUp !== null && now - lastPointerUp > 500) {
+            pointerCount = 0;
+            lastPointerUp = null;
+            return;
+        }
+
+        event.preventDefault();
+
+        const nextPointerCount = pointerCount + 1;
+
+        if (nextPointerCount === 5) {
+            pointerCount = 0;
+            lastPointerUp = null;
+            toolsElement.hidden = !toolsElement.hidden;
+        } else {
+            pointerCount = nextPointerCount;
+            lastPointerUp = now;
+        }
+    });
 
     globals.appLogger = {
         log

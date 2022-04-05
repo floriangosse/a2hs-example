@@ -1,9 +1,8 @@
 .tools {
     position: fixed;
+    left: 0;
     right: 0;
     bottom: 0;
-
-    width: 40vw;
 
     border: 1px solid lightgray;
 
@@ -96,4 +95,15 @@
 
 .log-line-date:after {
     content: ']';
+}
+
+@media (min-width: 800px) {
+    .tools {
+        position: fixed;
+        left: auto;
+        right: 0;
+        bottom: 0;
+
+        width: 40vw;
+    }
 }
